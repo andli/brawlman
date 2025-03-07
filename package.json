@@ -8,15 +8,15 @@
     "start": "next start"
   },
   "dependencies": {
-    "mongoose": "^6.0.0",
+    "mongoose": "^6.13.8",
     "next": "latest",
     "next-auth": "^4.0.0",
     "react": "latest",
     "react-dom": "latest",
-    "tailwindcss": "^2.0.0"
+    "tailwindcss": "^2.2.19"
   },
   "devDependencies": {
-    "postcss": "^8.0.0",
-    "autoprefixer": "^10.0.0"
+    "autoprefixer": "^10.0.0",
+    "postcss": "^8.0.0"
   }
 }
