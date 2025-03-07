@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.0.11",
@@ -17,6 +18,8 @@
     "tailwindcss": "^2.2.19"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.26.0",
+    "@typescript-eslint/parser": "^8.26.0",
     "autoprefixer": "^10.0.0",
     "eslint": "^9.21.0",
     "eslint-config-next": "^15.2.1",
