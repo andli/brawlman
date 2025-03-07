@@ -10,7 +10,7 @@
   "dependencies": {
     "mongoose": "^6.13.8",
     "next": "latest",
-    "next-auth": "^4.0.0",
+    "next-auth": "^4.24.11",
     "react": "latest",
     "react-dom": "latest",
     "tailwindcss": "^2.2.19"
