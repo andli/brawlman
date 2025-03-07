@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Brawlman
+
+Brawlman is a full-stack web application designed for managing Blood Bowl-style teams and simulating matches. Built with Next.js, Tailwind CSS, MongoDB Atlas, and NextAuth.js, this application provides a seamless experience for users to create and manage their teams.
+
+## Features
+
+- User authentication using Google OAuth via NextAuth.js
+- Create, read, update, and delete teams and players
+- Simulate matches between teams
+- Responsive design using Tailwind CSS
+
+## Project Structure
+
+```
+Brawlman
+├── components          # Reusable components for the application
+│   ├── Layout.js
+│   └── Navbar.js
+├── lib                # Library files for database connections
+│   └── mongodb.js
+├── models             # Mongoose models for MongoDB
+│   ├── Team.js
+│   ├── Player.js
+│   └── Match.js
+├── pages              # Next.js pages and API routes
+│   ├── api
+│   │   ├── teams.js
+│   │   └── matches.js
+│   ├── _app.js
+│   ├── index.js
+│   └── auth
+│       └── [...nextauth].js
+├── public             # Static assets
+│   └── favicon.ico
+├── styles             # CSS styles
+│   ├── globals.css
+│   └── tailwind.css
+├── .env.local         # Environment variables
+├── next.config.js     # Next.js configuration
+├── package.json       # Project metadata and dependencies
+├── tailwind.config.js  # Tailwind CSS configuration
+└── postcss.config.js  # PostCSS configuration
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (version 12 or later)
+- MongoDB Atlas account
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/Brawlman.git
+   cd Brawlman
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-## Learn More
+3. Set up your environment variables in `.env.local`:
+   ```
+   MONGODB_URI=your_mongodb_connection_string
+   NEXTAUTH_URL=http://localhost:3000
+   NEXTAUTH_SECRET=your_nextauth_secret
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. Run the development server:
+   ```
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Open your browser and navigate to `http://localhost:3000`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+To deploy the application, you can use Vercel. Follow these steps:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push your code to a GitHub repository.
+2. Sign in to Vercel and import your GitHub repository.
+3. Set up your environment variables in the Vercel dashboard.
+4. Deploy your application.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or features.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
