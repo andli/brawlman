@@ -1,26 +1,9 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
-const matchSchema = new mongoose.Schema({
-    team1: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Team',
-        required: true
-    },
-    team2: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Team',
-        required: true
-    },
-    score: {
-        type: String,
-        required: true
-    },
-    date: {
-        type: Date,
-        default: Date.now
-    }
+const MatchSchema = new mongoose.Schema({
+  teams: [{ type: mongoose.Schema.Types.ObjectId, ref: "Team" }],
+  date: Date,
+  score: String,
 });
 
-const Match = mongoose.model('Match', matchSchema);
-
-module.exports = Match;
+export default mongoose.models.Match || mongoose.model("Match", MatchSchema);
