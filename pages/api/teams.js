@@ -1,4 +1,4 @@
-import { connectToDatabase } from "../../lib/mongodb";
+import connectToDatabase from "../../lib/mongodb";
 import Team from "../../models/Team";
 
 export default async function handler(req, res) {
@@ -10,7 +10,7 @@ export default async function handler(req, res) {
         const teams = await Team.find({});
         res.status(200).json(teams);
       } catch (error) {
-        console.error(error);
+        console.error(error); // Log the error for debugging purposes
         res.status(500).json({ error: "Failed to fetch teams" });
       }
       break;
@@ -21,7 +21,7 @@ export default async function handler(req, res) {
         await team.save();
         res.status(201).json(team);
       } catch (error) {
-        console.error(error);
+        console.error(error); // Log the error for debugging purposes
         res.status(400).json({ error: "Failed to create team" });
       }
       break;
@@ -34,7 +34,7 @@ export default async function handler(req, res) {
         });
         res.status(200).json(updatedTeam);
       } catch (error) {
-        console.error(error);
+        console.error(error); // Log the error for debugging purposes
         res.status(400).json({ error: "Failed to update team" });
       }
       break;
@@ -45,7 +45,7 @@ export default async function handler(req, res) {
         await Team.findByIdAndDelete(id);
         res.status(204).end();
       } catch (error) {
-        console.error(error);
+        console.error(error); // Log the error for debugging purposes
         res.status(400).json({ error: "Failed to delete team" });
       }
       break;
