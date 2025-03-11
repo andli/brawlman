@@ -3,38 +3,180 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Inter", sans-serif;
-  background-color: #f9fafb; /* Tailwind's gray-100 */
-  color: #111827; /* Tailwind's gray-900 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-green-50 besley-normal;
+  }
 }
 
-* {
-  box-sizing: border-box;
+/* Apply Averia Regular font to all heading classes */
+@layer components {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply averia-serif-libre-regular;
+  }
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+.logotext {
+  @apply bowlby-one-sc-regular;
+  color: blue; /* The text color */
+  -webkit-text-stroke: 1.5px #fff; /* The stroke thickness and color */
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
+/* Buttons */
+button {
+  @apply py-2 px-4 text-white averia-serif-libre-regular;
+}
+
+.confirm_button {
+  @apply bg-green-800 text-white mr-2 px-4 py-2 rounded-lg hover:bg-green-700;
+}
+
+.cancel_button {
+  @apply bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700;
+}
+
+/* Headings */
+h1 {
+  @apply text-4xl font-bold mb-4;
+}
+
+h2 {
+  @apply text-3xl font-semibold mb-3;
+}
+
+h3 {
+  @apply text-2xl font-semibold mb-2;
+}
+
+h4 {
+  @apply text-xl font-medium mb-1;
+}
+
+h5 {
+  @apply text-lg font-medium mb-1;
+}
+
 h6 {
-  margin: 0;
+  @apply text-base font-medium mb-1;
 }
 
+/* Paragraphs */
+p {
+  @apply text-gray-700 mb-4;
+}
+
+/* Links */
+a {
+  @apply text-blue-600 hover:text-blue-800 underline;
+}
+
+/* Lists */
 ul {
-  list-style: none;
-  padding: 0;
+  @apply list-disc pl-5 mb-4;
+}
+
+ol {
+  @apply list-decimal pl-5 mb-4;
+}
+
+li {
+  @apply mb-1;
+}
+
+/* Tables */
+table {
+  @apply w-full border-collapse;
+}
+th {
+  @apply averia-serif-libre-regular;
+}
+
+th,
+td {
+  @apply border border-gray-300 px-4 py-2;
+}
+
+th {
+  @apply bg-gray-100 text-left font-semibold;
+}
+
+tr:nth-child(even) {
+  @apply bg-gray-50;
+}
+tr:nth-child(odd) {
+  @apply bg-white;
+}
+
+/* Forms */
+input[type="text"],
+input[type="email"],
+textarea {
+  @apply mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm;
 }
 
 button {
-  cursor: pointer;
+  @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700;
+}
+
+label {
+  @apply block text-sm font-medium text-gray-700;
+}
+
+/* FONTS */
+.averia-serif-libre-light {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.averia-serif-libre-regular {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.averia-serif-libre-bold {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.averia-serif-libre-light-italic {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.averia-serif-libre-regular-italic {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.averia-serif-libre-bold-italic {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.bowlby-one-sc-regular {
+  font-family: "Bowlby One SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.besley-normal {
+  font-family: "Besley", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
