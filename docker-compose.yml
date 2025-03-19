@@ -9,6 +9,16 @@ services:
       - .env.local
     depends_on:
       - mongo
+    volumes:
+      # Mount source code for hot reloading
+      - ./pages:/app/pages
+      - ./components:/app/components
+      - ./styles:/app/styles
+      - ./public:/app/public
+      # If you have additional directories, add them here
+      # - ./lib:/app/lib
+      # - ./utils:/app/utils
+    command: npm run dev # Ensure we're using development server
 
   mongo:
     image: mongo:latest
